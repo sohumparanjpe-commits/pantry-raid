@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantry Raid: Infinite Nutrition Adventure</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container">
+  <!-- Victory Overlay Screen -->
+  <div id="victory-overlay" class="hidden">
+    <div class="victory-card">
+      <h2>🎉 Mission Accomplished!</h2>
+      <p id="victory-stats">You collected all 6 essential nutrients!</p>
+      <div id="leaderboard-container">
+        <h3>🏆 Top Best Times</h3>
+        <ol id="leaderboard-list"></ol>
+      </div>
+      <button class="play-again-btn" onclick="location.reload()">Play Again</button>
+      <p class="credit">Made by Sohum P.</p>
+    </div>
+  </div>
+
+  <header>
+    <h1>Pantry Raid: Infinite Nutrition</h1>
+    <p>Explore the infinite pantry maze, collect all 6 essential nutrients, and dodge hazards!</p>
+    <p class="credit">Made by Sohum P.</p>
+  </header>
+
+  <div id="main-stage">
+    <div id="canvas-wrapper">
+      <canvas id="gameCanvas" width="700" height="600"></canvas>
+      <canvas id="minimap" width="120" height="120"></canvas>
+    </div>
+
+    <aside id="sidebar">
+      <div id="status-panel">
+        <h3>Player Status</h3>
+        <p>Health: <span id="health-value">100</span>%</p>
+        <div id="health-bar-container">
+          <div id="health-bar-fill"></div>
+        </div>
+        <p class="stat-line">Time: <span id="timer-display">0.0</span>s</p>
+        <p class="stat-line">Best: <span id="best-time-display">--</span></p>
+        <p id="game-over-msg" class="hidden">GAME OVER!</p>
+      </div>
+
+      <div id="info-banner" class="banner-normal">
+        <h4 id="banner-title">Pantry Raid</h4>
+        <p id="banner-desc">Explore the infinite pantry to find nutrients.</p>
+        <p id="banner-boost">Ready</p>
+      </div>
+
+      <div id="checklist-panel">
+        <h3>Log (<span id="count">0</span>/6)</h3>
+        <ul id="nutrient-list">
+          <li id="nutr-carbs" class="missing">🌾 Carbs</li>
+          <li id="nutr-protein" class="missing">🍗 Protein</li>
+          <li id="nutr-fats" class="missing">🥑 Fats</li>
+          <li id="nutr-vitamins" class="missing">🍎 Vitamins</li>
+          <li id="nutr-minerals" class="missing">🥛 Minerals</li>
+          <li id="nutr-water" class="missing">💧 Water</li>
+        </ul>
+      </div>
+
+      <div id="active-boosts">
+        <h4>Status</h4>
+        <p id="boost-status">Normal</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
